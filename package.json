@@ -1,0 +1,46 @@
+{
+  "name": "@kuzu-media/stratum-posthog-js",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzu-media/stratum-posthog-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:lib",
+    "build:clean": "rm -rf dist",
+    "build:lib": "rollup -c --bundleConfigAsCjs"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types/index.d.ts"
+      ]
+    }
+  },
+  "keywords": [],
+  "author": "Rachel Higley",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@capitalone/stratum-observability": "^1.1.0",
+    "posthog-js": "^1.181.0"
+  },
+  "devDependencies": {
+    "rollup": "^4.25.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.6.3"
+  }
+}
