@@ -19,21 +19,39 @@ class PosthogService<
   ) {
     super(options);
   }
-  // Override the publish method to return a different type
+
   publish<
     T extends PosthogEventId,
     Props extends Properties<T, PosthogCatalog>,
   >(
     key: T,
-    options: Props extends unknown
-      ? Partial<UserDefinedEventOptions> & {
+    options: Partial<UserDefinedEventOptions> & {
+      pluginData: {
+        PosthogPlugin: {
+          properties: Props;
+        };
+      };
+    },
+  ): Promise<boolean>;
+
+  publish<T extends PosthogEventId, Props extends undefined>(
+    key: T,
+    options?: undefined, // Optional when Props is undefined
+  ): Promise<boolean>;
+  publish<
+    T extends PosthogEventId,
+    Props extends Properties<T, PosthogCatalog> | undefined,
+  >(
+    key: T,
+    options: Props extends undefined
+      ? undefined
+      : Partial<UserDefinedEventOptions> & {
           pluginData: {
             PosthogPlugin: {
               properties: Props;
             };
           };
-        }
-      : undefined, // Make options required if Props is defined
+        },
   ): Promise<boolean> {
     return super.publish(key, options);
   }
