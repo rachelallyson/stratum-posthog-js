@@ -37,7 +37,7 @@ export class BasePosthogEventModel extends BaseEventModel<PosthogEvent> {
       });
     }
 
-    return { ...item, ...properties };
+    return { ...item, properties };
   }
 }
 
