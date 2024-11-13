@@ -28,3 +28,4 @@ const events = {
 };
 
 export const catalog = createPosthogCatalog<EVENT_ID, typeof events>(events);
+

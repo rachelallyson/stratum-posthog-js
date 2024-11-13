@@ -1,8 +1,9 @@
 import { PosthogService, PosthogPlugin } from "..";
 import { catalog, EVENT_ID } from "./catalog";
 
-const POSTHOG_HOST = "https://your-posthog-host.com";
-const POSTHOG_KEY = "your-posthog-key";
+const POSTHOG_HOST = process.env.POSTHOG_HOST || "https://your-posthog-host.com";
+const POSTHOG_KEY = process.env.POSTHOG_KEY || "your-posthog-key";
+
 export const stratumService = new PosthogService({
   catalog: {
     items: catalog,
@@ -12,6 +13,7 @@ export const stratumService = new PosthogService({
     PosthogPlugin({
       POSTHOG_HOST: POSTHOG_HOST,
       POSTHOG_KEY: POSTHOG_KEY,
+      DEBUG: true,
     }),
   ],
 
@@ -28,23 +30,3 @@ export const stratumService = new PosthogService({
 });
 
 
-stratumService.publish(EVENT_ID.LOADED, {
-  pluginData: {
-    PosthogPlugin: {
-      properties: {
-        loadedAt: new Date(),
-      },
-    }
-  },
-});
-
-stratumService.publish(EVENT_ID.GENERIC_ERROR, {
-  pluginData: {
-    PosthogPlugin: {
-      properties: {
-        error: new Error(),
-        message: "Something went wrong",
-      },
-    },
-  },
-});

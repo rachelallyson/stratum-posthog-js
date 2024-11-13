@@ -10,6 +10,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
+    "example": "parcel src/example/index.html",
     "build": "npm run build:clean && npm run build:lib",
     "build:clean": "rm -rf dist",
     "build:lib": "rollup -c --bundleConfigAsCjs"
@@ -39,8 +40,16 @@
     "posthog-js": "^1.181.0"
   },
   "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "dotenv": "^16.4.5",
+    "parcel": "^2.13.0",
+    "process": "^0.11.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rollup": "^4.25.0",
     "rollup-plugin-typescript2": "^0.36.0",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
   }
 }
