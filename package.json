@@ -1,13 +1,10 @@
 {
-  "name": "@kuzu-media/stratum-posthog-js",
+  "name": "@rachelallyson/stratum-posthog-js",
   "version": "1.0.1",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kuzu-media/stratum-posthog-js.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "url": "git+https://github.com/rachelallyson/stratum-posthog-js.git"
   },
   "scripts": {
     "example": "parcel src/example/index.html",
@@ -33,23 +30,23 @@
     }
   },
   "keywords": [],
-  "author": "Rachel Higley",
+  "author": "Rachel Allyson",
   "license": "Apache-2.0",
   "dependencies": {
     "@capitalone/stratum-observability": "^1.1.0",
-    "posthog-js": "^1.181.0"
+    "posthog-js": "^1.211.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "dotenv": "^16.4.5",
-    "parcel": "^2.13.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "dotenv": "^16.4.7",
+    "parcel": "^2.13.3",
     "process": "^0.11.10",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "rollup": "^4.25.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rollup": "^4.32.1",
     "rollup-plugin-typescript2": "^0.36.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   }
 }

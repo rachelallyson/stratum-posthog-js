@@ -6,14 +6,14 @@ This is a plugin for Stratum Observability that allows you to send events to Pos
 ## Installation
 
 ```bash
-npm install @kuzu-media/stratum-posthog-js
+npm install @rachelallyson/stratum-posthog-js
 ```
 
 ## Usage
 
 ### Initialize the PosthogService
 ```typescript
-import PosthogService, { PosthogPluginFactory } from "@kuzu-media/stratum-posthog-js";
+import PosthogService, { PosthogPluginFactory } from "@rachelallyson/stratum-posthog-js";
 import { catalog, EVENT_ID } from "./catalog";
 
 const POSTHOG_HOST = "https://your-posthog-host.com";
